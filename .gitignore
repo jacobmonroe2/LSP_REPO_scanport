@@ -1,0 +1,7 @@
+org/
+*.class
+bin/
+out/
+.project
+.classpath
+.settings/
