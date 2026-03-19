@@ -1,0 +1,68 @@
+ATC System Design: CRC Cards
+
+--------------------------------------------------------
+CRC Card
+Class: TransponderReceiver
+Responsibilities:
+- Receive high-density data packets from aircraft transponders.
+- Unpack flight data and aircraft type information.
+- Send extracted data to the database for storage.
+
+Collaborators (if any):
+- AircraftDatabase.
+
+Assumptions (if any):
+- The receiver handles the conversion from high-density packet format to a readable data structure.
+--------------------------------------------------------
+CRC Card
+Class: AircraftDatabase
+Responsibilities:
+- Store unpacked flight and aircraft information.
+- Provide aircraft data for display updates and safety analysis.
+- Search for specific aircraft details based on controller queries.
+
+Collaborators (if any):
+- None.
+
+Assumptions (if any):
+- The database is maintained in memory for fast 10-second updates.
+--------------------------------------------------------
+CRC Card
+Class: SafetyAnalyzer
+Responsibilities:
+- Analyze stored aircraft data for dangerous proximity or paths.
+- Detect dangerous flight situations.
+- Signal alerts when a conflict is identified.
+
+Collaborators (if any):
+- AircraftDatabase.
+
+Assumptions (if any):
+- "Dangerous situations" are defined by the system's proximity logic.
+--------------------------------------------------------
+CRC Card
+Class: DisplayController
+Responsibilities:
+- Build a graphical representation of aircraft from the database.
+- Update the graphics display every 10 seconds.
+- Refresh on-screen information for the controller.
+
+Collaborators (if any):
+- AircraftDatabase.
+
+Assumptions (if any):
+- The system provides a 10-second timer to trigger the refresh.
+--------------------------------------------------------
+CRC Card
+Class: QueryManager
+Responsibilities:
+- Receive and process database queries from the controller.
+- Fetch specific plane details from the database based on screen selection.
+- Return plane details to the controller interface.
+
+Collaborators (if any):
+- AircraftDatabase.
+
+Assumptions (if any):
+- The controller queries the database via an interface on the graphics screen.
+--------------------------------------------------------
