@@ -1,0 +1,5 @@
+# Question 4 — AI Reflection
+
+At the start of this semester I viewed AI tools mostly as a shortcut; something to generate boilerplate or look up syntax quickly. Over the course of the semester my perspective shifted. Working through assignments like the IntegerSet implementation and the concurrency problems made me realize that AI is most useful not as a replacement for thinking but as a sounding board. When I was stuck on why a race condition existed in `addRequest()`, talking through the problem with an AI tool helped me see the compound operation issue clearly. The value was in having something to reason out loud with.
+
+Going forward I plan to use AI as a first pass reviewer rather than a first pass writer. Before submitting code I will describe my design to an AI and ask where the weaknesses are; the same way I might explain it to a classmate during a code review. For design pattern work especially, I found it useful to ask AI to critique my class structure after I had already made design decisions, rather than asking it to make those decisions for me. That approach keeps the understanding in my own head while still taking advantage of what AI does well.
